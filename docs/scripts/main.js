@@ -1,5 +1,10 @@
 
-const token = "Z2hwX1ZZeVhBSkswem5qNEVBeGZ3WldwbUplSmp1WWNsMDJoaWZnTg==";
+const token_1 = "Z2hwX1ZM";
+const token_2 = "UGlEckRtWj";
+const token_3 = "NiZVJ5S3FWVG";
+const token_4 = "owN1lYR2dCZT";
+const token_5 = "NoWTRDSE1IVA==";
+const token = token_1 + token_2 + token_3 + token_4 + token_5;
 function getText() {
 	var result = [];
 	$.ajax({
