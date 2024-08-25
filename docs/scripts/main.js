@@ -54,3 +54,22 @@ $(document).ready(function () {
 		});
 	})
 });
+
+const gallery = document.querySelector('.gallery');
+
+// Initialize Viewer.js
+const viewer = new Viewer(gallery, {
+	inline: false,
+	button: true,
+	navbar: true,
+	title: true,
+	toolbar: true,
+	tooltip: true,
+	movable: true,
+	zoomable: true,
+	rotatable: true,
+	scalable: true,
+	transition: true,
+	fullscreen: true,
+	keyboard: true,
+});
