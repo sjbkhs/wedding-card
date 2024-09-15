@@ -18,8 +18,12 @@ function getText() {
 		success: function (obj) {
 			var data = JSON.parse(obj);
 			$.each(data.reverse(), function (i) {
+				databody = data[i].body;
+				databody = databody.replace(/\r\n/g, "<br>");
+				databody = databody.replace(/\n/g, "<br>");
 				$("#comment-list").append("<h3>" + (i + 1) + ". " + data[i].title + "</h3>");
-				$("#comment-list").append("<pre>" + data[i].body + "</pre>");
+				$("#comment-list").append("<div class=\"comment_box\">" + databody + "</div>");
+				console.log(databody);
 			});
 		}
 	});
