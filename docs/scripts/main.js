@@ -19,7 +19,7 @@ function getText() {
 			var data = JSON.parse(obj);
 			$.each(data.reverse(), function (i) {
 				$("#comment-list").append("<h3>" + (i + 1) + ". " + data[i].title + "</h3>");
-				$("#comment-list").append("<p>" + data[i].body + "</p>");
+				$("#comment-list").append("<pre>" + data[i].body + "</pre>");
 			});
 		}
 	});
