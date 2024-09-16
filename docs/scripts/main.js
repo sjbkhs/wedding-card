@@ -23,7 +23,6 @@ function getText() {
 				databody = databody.replace(/\n/g, "<br>");
 				$("#comment-list").append("<h3>" + (i + 1) + ". " + data[i].title + "</h3>");
 				$("#comment-list").append("<div class=\"comment_box\">" + databody + "</div>");
-				console.log(databody);
 			});
 		}
 	});
