@@ -369,6 +369,8 @@ h1, h2, h3, h4, h5, h6,
     font-weight: 500;
     line-height: 1.2;
     color: inherit;
+	word-wrap: break-word;
+	word-break: keep-all;
 }
 
 h1, .h1 {
@@ -10019,6 +10021,71 @@ body {
     top: 0;
 }
 
+.ww-contact-button {
+	display: inline-block;
+	margin: 10px;
+	padding: 15px 30px;
+	font-size: 18px;
+	color: white;
+	text-decoration: none;
+	border-radius: 10px;
+	transition: background-color 0.3s;
+}
+
+.ww-contact-button:hover {
+	opacity: 0.9;
+	color: black;
+}
+
+/* 신랑 SMS 버튼: 연한 파란색 */
+.contact-button-groom {
+	background-color: #add8e6;
+	/* 연한 파란색 */
+	color: black;
+	/* 텍스트 색상 */
+	border-style: none;
+}
+
+/* 신부 SMS 버튼: 연한 분홍색 */
+.contact-button-bride {
+	background-color: #ffb6c1;
+	/* 연한 분홍색 */
+	color: black;
+	/* 텍스트 색상 */
+	border-style: none;
+}
+
+#popup-groom, #popup-bride {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 300px;
+	padding: 20px;
+	background-color: white;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	z-index: 1000;
+}
+
+#popupOverlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 999;
+}
+
+.bankaccounttext {
+	font-family: 'Noto Serif KR', serif;
+	font-size: 1.0em;
+	color: black;
+	word-break: keep-all;
+}
+
 /* Footer Style */
 .ww-footer a.credit {
     color: inherit;
@@ -10066,5 +10133,5 @@ body {
 .comment_box {
     word-wrap: break-word;
     word-break: keep-all;
-    margin-bottom: 1rem !important;
+    margin-bottom: 2rem !important;
 }

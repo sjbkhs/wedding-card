@@ -55,7 +55,53 @@ $(document).ready(function () {
 				$('#message').val('');
 			}
 		});
-	})
+	});
+
+	// 팝업 열기
+	$('#openPopup-groom').click(function () {
+		$('#popup-groom').show();
+		$('#popupOverlay').show();
+		// 히스토리에 팝업이 열렸다는 상태 추가
+		history.pushState(null, null, location.href);
+	});
+
+	$('#openPopup-bride').click(function () {
+		$('#popup-bride').show();
+		$('#popupOverlay').show();
+		// 히스토리에 팝업이 열렸다는 상태 추가
+		history.pushState(null, null, location.href);
+	});
+
+	// 팝업 닫기
+	$('#closePopup, #popupOverlay').click(function () {
+		closePopup();
+	});
+
+	// 뒤로가기 버튼을 누르면 팝업 닫기
+	$(window).on('popstate', function () {
+		closePopup();
+	});
+
+	// 팝업 닫는 함수
+	function closePopup() {
+		$('#popup-groom').hide();
+		$('#popup-bride').hide();
+		$('#popupOverlay').hide();
+	};
+
+	$('#copyButton').click(function (event) {
+		event.preventDefault();
+
+		// hidden input에서 텍스트 가져오기
+		const copyText = $('#copyText').val();
+
+		// 텍스트를 클립보드에 복사
+		navigator.clipboard.writeText(copyText).then(function () {
+			alert('텍스트가 복사되었습니다: (' + copyText + ')');
+		}).catch(function (error) {
+			alert('복사에 실패했습니다: ' + error);
+		});
+	});
 });
 
 const gallery = document.querySelector('.gallery');
