@@ -89,13 +89,14 @@ $(document).ready(function () {
 		$('#popupOverlay').hide();
 	};
 
-	$('#copyButton').click(function (event) {
+	$('.copyButton').click(function (event) {
 		event.preventDefault();
 
-		// hidden input에서 텍스트 가져오기
-		const copyText = $('#copyText').val();
+		// data-copy-target 속성에서 복사할 타겟의 id 가져오기
+		const targetId = $(this).data('copy-target');
 
-		// 텍스트를 클립보드에 복사
+		// 해당 id의 값을 클립보드에 복사
+		const copyText = $('#' + targetId).val();
 		navigator.clipboard.writeText(copyText).then(function () {
 			alert('텍스트가 복사되었습니다: (' + copyText + ')');
 		}).catch(function (error) {
