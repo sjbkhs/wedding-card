@@ -115,7 +115,7 @@ const viewer = new Viewer(gallery, {
 	title: true,
 	toolbar: true,
 	tooltip: true,
-	movable: true,
+	movable: false,
 	zoomable: true,
 	rotatable: true,
 	scalable: true,
