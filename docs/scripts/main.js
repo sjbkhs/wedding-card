@@ -8,7 +8,7 @@ const token = token_1 + token_2 + token_3 + token_4 + token_5;
 function getText() {
 	var result = [];
 	$.ajax({
-		url: "https://api.github.com/repos/sjbkhs/wedding-card/issues",
+		url: "https://api.github.com/repos/sjbkhs/wedding-card/issues?per_page=100",
 		type: 'get',
 		dataType: 'html',
 		async: false,
@@ -23,6 +23,7 @@ function getText() {
 				databody = databody.replace(/\n/g, "<br>");
 				$("#comment-list").append("<h3>" + (i + 1) + ". " + data[i].title + "</h3>");
 				$("#comment-list").append("<div class=\"comment_box\">" + databody + "</div>");
+				console.log(data[i].title);
 			});
 		}
 	});
